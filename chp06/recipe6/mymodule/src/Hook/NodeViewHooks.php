@@ -5,6 +5,7 @@ namespace Drupal\mymodule\Hook;
 use Drupal\Core\Hook\Attribute\Hook;
 use Drupal\mymodule\NodeStatisticsService;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 class NodeViewHooks {
 
@@ -13,7 +14,7 @@ class NodeViewHooks {
   ) {}
 
   #[Hook('node_view')]
-  public function nodeView(array &$build, NodeInterface $node): void {
+  public function nodeView(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, string $view_mode): void {
     $this->nodeStatistics->recordView((int) $node->id());
   }
 

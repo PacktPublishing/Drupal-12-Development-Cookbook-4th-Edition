@@ -1,6 +1,6 @@
 <?php
 
-use \Drupal\contact\Entity\ContactForm;
+use Drupal\contact\Entity\ContactForm;
 
 /**
  * @file
