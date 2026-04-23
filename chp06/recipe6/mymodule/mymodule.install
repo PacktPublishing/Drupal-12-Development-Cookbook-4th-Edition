@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for My Module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function mymodule_schema(): array {
+  $schema['mymodule_node_stats'] = [
+    'description' => 'Stores node view statistics.',
+    'fields' => [
+      'nid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The node ID.',
+      ],
+      'view_count' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The number of times the node has been viewed.',
+      ],
+      'last_viewed' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The timestamp of the last view.',
+      ],
+      'last_viewer_uid' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The user ID of the last viewer.',
+      ],
+    ],
+    'primary key' => ['nid'],
+  ];
+  return $schema;
+}
