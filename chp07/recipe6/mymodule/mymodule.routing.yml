@@ -1,0 +1,7 @@
+mymodule.article_list:
+  path: /articles
+  defaults:
+    _controller: Drupal\mymodule\Controller\ArticleListController::page
+    _title: 'Recent Articles'
+  requirements:
+    _permission: 'access content'
