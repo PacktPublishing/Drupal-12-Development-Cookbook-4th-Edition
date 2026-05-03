@@ -2,9 +2,20 @@
 
 namespace Drupal\mymodule\Controller;
 
+use Drupal\Core\File\MimeType\MimeTypeGuesserInterface;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class DownloadController {
+
+  /**
+   * Constructs a DownloadController object.
+   *
+   * @param \Drupal\Core\File\MimeType\MimeTypeGuesserInterface $mimeTypeGuesser
+   *   The MIME type guesser.
+   */
+  public function __construct(
+    protected readonly MimeTypeGuesserInterface $mimeTypeGuesser,
+  ) {}
 
   /**
    * Downloads a file.
@@ -15,10 +26,7 @@ class DownloadController {
   public function page(): BinaryFileResponse {
     // File paths are relative to the document root (web.)
     $file_path = 'modules/custom/mymodule/dummy.pdf';
-
-    /** @var \Drupal\Core\File\MimeType\MimeTypeGuesser $guesser */
-    $guesser = \Drupal::service('file.mime_type.guesser');
-    $mime_type = $guesser->guessMimeType($file_path);
+    $mime_type = $this->mimeTypeGuesser->guessMimeType($file_path);
 
     $response = new BinaryFileResponse($file_path);
     $response->headers->set('Content-Type', $mime_type);
