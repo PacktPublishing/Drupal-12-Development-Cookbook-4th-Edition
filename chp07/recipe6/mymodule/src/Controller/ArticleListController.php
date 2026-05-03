@@ -31,7 +31,7 @@ class ArticleListController extends ControllerBase {
 
     $items = [];
     foreach ($nodes as $node) {
-      $items[] = $node->toLink()->toString();
+      $items[] = $node->toLink()->toRenderable();
       $cache->addCacheableDependency($node);
     }
 
