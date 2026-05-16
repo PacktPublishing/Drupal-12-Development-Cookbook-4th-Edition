@@ -1,8 +1,0 @@
-{
-    "name": "drupal/mymodule_autowire",
-    "type": "drupal-module",
-    "description": "This is an example module demonstrating autowiring from the Drupal Development Cookbook!",
-    "require": {
-        "drupal/core": ">=12"
-    }
-}

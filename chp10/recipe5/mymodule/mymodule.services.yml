@@ -1,4 +1,4 @@
 services:
-  plugin.manager.geo_locator:
-    class: Drupal\mymodule\GeoLocatorPluginManager
+  plugin.manager.geolocator:
+    class: Drupal\mymodule\GeoLocatorManager
     parent: default_plugin_manager

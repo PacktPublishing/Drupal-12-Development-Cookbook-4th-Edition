@@ -1,4 +1,0 @@
-name: My Module Autowire
-type: module
-description: An example module demonstrating autowiring from the Drupal Development Cookbook!
-core_version_requirement: ^12
