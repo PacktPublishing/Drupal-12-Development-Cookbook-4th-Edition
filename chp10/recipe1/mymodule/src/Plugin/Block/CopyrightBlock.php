@@ -22,7 +22,7 @@ class CopyrightBlock extends BlockBase {
   public function build(): array {
     $date = new \DateTime();
     return [
-      '#markup' => '&copy; ' . $date->format('Y'),
+      '#markup' => $this->t('Copyright @year&copy; My Company', ['@year' => $date->format('Y')]),
     ];
   }
 
