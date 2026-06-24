@@ -1,0 +1,6 @@
+mymodule.pdf_download:
+  path: /pdf-download
+  defaults:
+    _controller: Drupal\mymodule\Controller\DownloadController::page
+  requirements:
+    _user_is_logged_in: 'TRUE'
