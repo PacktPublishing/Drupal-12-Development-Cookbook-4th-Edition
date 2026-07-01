@@ -1,0 +1,7 @@
+mymodule.company_form:
+  path: '/admin/config/system/company'
+  defaults:
+    _form: '\Drupal\mymodule\Form\CompanyForm'
+    _title: 'Company settings'
+  requirements:
+    _permission: 'administer site configuration'

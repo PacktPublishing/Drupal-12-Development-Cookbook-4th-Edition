@@ -1,0 +1,15 @@
+mymodule.company_form:
+  path: '/admin/config/system/company'
+  defaults:
+    _form: '\Drupal\mymodule\Form\CompanyForm'
+    _title: 'Company settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+mymodule.conditional_form:
+  path: '/conditional-form'
+  defaults:
+    _form: '\Drupal\mymodule\Form\ConditionalForm'
+    _title: 'Conditional form'
+  requirements:
+    _access: 'TRUE'
