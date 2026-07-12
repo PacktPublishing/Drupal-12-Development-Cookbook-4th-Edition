@@ -1,0 +1,29 @@
+name: My Portfolio
+description: 'A portfolio content type with category and image fields.'
+type: Content type
+install:
+  - node
+  - field
+  - text
+  - image
+  - file
+  - path
+config:
+  actions:
+    user.role.content_editor:
+      grantPermissions:
+        - 'create portfolio content'
+        - 'edit own portfolio content'
+        - 'delete own portfolio content'
+        - 'edit any portfolio content'
+    taxonomy.vocabulary.portfolio_categories:
+      createIfNotExists:
+        langcode: en
+        status: true
+        name: 'Portfolio Categories'
+        vid: portfolio_categories
+        description: 'Categories for portfolio items.'
+        weight: 0
+    system.site:
+      simpleConfigUpdate:
+        page.front: /portfolio

@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+name: Blog
+type: blog
+description: 'Use blog posts to share news, articles, and updates.'
+help: 'Use blog posts to share news, articles, and updates.'
+new_revision: true
+preview_mode: 1
+display_submitted: true
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
