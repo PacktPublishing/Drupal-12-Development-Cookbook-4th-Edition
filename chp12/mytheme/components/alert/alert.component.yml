@@ -1,0 +1,17 @@
+name: Alert
+status: stable
+props:
+  type: object
+  required: [message]
+  properties:
+    message:
+      type: string
+      title: Message
+    type:
+      type: string
+      title: Type
+      default: info
+      enum: [info, success, warning, error]
+slots:
+  alert_actions:
+    title: Alert actions

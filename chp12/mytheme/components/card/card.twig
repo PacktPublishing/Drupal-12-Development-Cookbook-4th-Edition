@@ -1,0 +1,25 @@
+{% set tag = heading_level ?? 'h3' %}
+{% set classes = ['card'] %}
+{% if modifier %}
+  {% set classes = classes|merge([modifier]) %}
+{% endif %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="card__header">
+    <{{ tag }} class="card__heading">{{ heading }}</{{ tag }}>
+  </div>
+  {% if card_body %}
+    <div class="card__body">
+      {% block card_body %}
+        {{ card_body }}
+      {% endblock %}
+    </div>
+  {% endif %}
+  {% if card_footer %}
+    <div class="card__footer">
+      {% block card_footer %}
+        {{ card_footer }}
+      {% endblock %}
+    </div>
+  {% endif %}
+</div>
