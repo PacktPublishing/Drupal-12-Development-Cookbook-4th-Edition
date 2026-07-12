@@ -1,0 +1,8 @@
+name: 'AI TL;DR'
+description: 'Provides a block that summarizes the current node into one sentence.'
+type: module
+package: Custom
+core_version_requirement: ^12
+dependencies:
+  - drupal:ai
+  - drupal:node
