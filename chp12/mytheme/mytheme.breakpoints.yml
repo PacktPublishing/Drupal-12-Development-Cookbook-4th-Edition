@@ -1,0 +1,19 @@
+mytheme.mobile:
+  label: Mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+mytheme.narrow:
+  label: Narrow
+  mediaQuery: '(min-width: 560px)'
+  weight: 1
+  multipliers:
+    - 1x
+mytheme.wide:
+  label: Wide
+  mediaQuery: '(min-width: 960px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x

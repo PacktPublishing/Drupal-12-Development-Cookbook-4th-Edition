@@ -1,0 +1,26 @@
+name: Card
+status: stable
+description: A card component with a header, body content, and optional footer.
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    heading:
+      type: string
+      title: Heading
+    heading_level:
+      type: string
+      title: Heading level
+      default: h3
+      enum: [h2, h3, h4]
+    modifier:
+      type: string
+      title: Modifier
+      default: ''
+      examples: [card--featured, card--compact]
+slots:
+  card_body:
+    title: Card body
+  card_footer:
+    title: Card footer
