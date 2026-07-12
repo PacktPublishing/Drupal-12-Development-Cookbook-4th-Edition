@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {}
+name: Blog Tags
+vid: blog_tags
+description: 'Tags for categorizing blog posts.'
+weight: 0
