@@ -1,0 +1,11 @@
+includes:
+  - vendor/mglaman/phpstan-drupal/extension.neon
+  - vendor/mglaman/phpstan-drupal/rules.neon
+  - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+
+parameters:
+  level: 5
+  paths:
+    - web/modules/custom
+  ignoreErrors:
+    - '#Call to an undefined method Drupal\\ai\\Plugin\\ProviderProxy::#'
