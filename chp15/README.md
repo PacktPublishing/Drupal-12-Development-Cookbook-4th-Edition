@@ -21,7 +21,10 @@ chp15/
   tests/playwright/
     camelcase-formatter.spec.ts
     drupal-login.spec.ts
+    content-listing.spec.ts             # beforeEach login hook + selectOption() filter (There's more)
     auth.setup.ts                       # reusable authenticated-state setup (There's more)
+  .github/workflows/
+    playwright.yml                      # CI workflow: install browsers, run suite, upload report
 ```
 
 ## Running the tests
