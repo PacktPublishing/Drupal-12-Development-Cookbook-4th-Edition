@@ -1,0 +1,5 @@
+name: Chapter 15 Testing Examples
+type: module
+description: 'Provides example code and tests for Chapter 15.'
+core_version_requirement: ^12
+package: Custom
