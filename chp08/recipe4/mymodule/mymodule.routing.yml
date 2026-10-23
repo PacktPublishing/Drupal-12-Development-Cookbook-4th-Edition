@@ -4,4 +4,4 @@ mymodule.update_article:
     _controller: Drupal\mymodule\Controller\ArticleController::update
   methods: [PATCH]
   requirements:
-    _entity_access: 'node.update'
+    _access: 'TRUE'

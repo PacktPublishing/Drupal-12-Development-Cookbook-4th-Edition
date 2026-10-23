@@ -4,4 +4,4 @@ mymodule.delete_article:
     _controller: Drupal\mymodule\Controller\ArticleController::delete
   methods: [DELETE]
   requirements:
-    _entity_access: 'node.delete'
+    _access: 'TRUE'
