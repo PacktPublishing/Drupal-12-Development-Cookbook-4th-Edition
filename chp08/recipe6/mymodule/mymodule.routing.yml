@@ -1,0 +1,17 @@
+mymodule.view_article:
+  path: /articles/{node}/view/{view_mode}
+  defaults:
+    _controller: Drupal\mymodule\Controller\ArticleController::view
+    _title_callback: Drupal\mymodule\Controller\ArticleController::viewTitle
+    view_mode: full
+  requirements:
+    _entity_access: 'node.view'
+
+mymodule.edit_article_form:
+  path: /articles/{node}/edit/{form_mode}
+  defaults:
+    _controller: Drupal\mymodule\Controller\ArticleController::editForm
+    _title: 'Edit Article'
+    form_mode: default
+  requirements:
+    _entity_access: 'node.update'

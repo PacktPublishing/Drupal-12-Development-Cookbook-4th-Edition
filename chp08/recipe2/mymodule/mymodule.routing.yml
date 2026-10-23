@@ -1,0 +1,7 @@
+mymodule.get_articles:
+  path: /articles
+  defaults:
+    _controller: Drupal\mymodule\Controller\ArticleController::index
+  methods: [GET]
+  requirements:
+    _permission: 'access content'

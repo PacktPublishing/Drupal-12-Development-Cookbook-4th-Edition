@@ -1,0 +1,7 @@
+mymodule.delete_article:
+  path: /articles/{node}
+  defaults:
+    _controller: Drupal\mymodule\Controller\ArticleController::delete
+  methods: [DELETE]
+  requirements:
+    _access: 'TRUE'

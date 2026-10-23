@@ -1,0 +1,7 @@
+mymodule.update_article:
+  path: /articles/{node}
+  defaults:
+    _controller: Drupal\mymodule\Controller\ArticleController::update
+  methods: [PATCH]
+  requirements:
+    _access: 'TRUE'
