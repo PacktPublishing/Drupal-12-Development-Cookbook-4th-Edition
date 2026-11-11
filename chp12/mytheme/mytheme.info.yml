@@ -1,24 +1,28 @@
 name: 'My Theme'
 type: theme
-description: 'A custom theme generated from Starterkit'
-core_version_requirement: ^12
-base theme: false
+'base theme': false
+version: 1.0.0
 libraries:
   - mytheme/theme-styling
   - mytheme/global-styling
   - mytheme/base
   - mytheme/messages
   - core/normalize
-regions:
-  header: Header
-  primary_menu: 'Primary menu'
-  secondary_menu: 'Secondary menu'
-  breadcrumb: Breadcrumb
-  highlighted: Highlighted
-  help: Help
-  content: Content
-  sidebar_first: 'First sidebar'
-  sidebar_second: 'Second sidebar'
-  footer: Footer
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
+libraries-extend:
+  user/drupal.user:
+    - mytheme/user
+  core/drupal.dropbutton:
+    - mytheme/dropbutton
+  core/drupal.dialog:
+    - mytheme/dialog
+  file/drupal.file:
+    - mytheme/file
+  core/drupal.item-list:
+    - mytheme/item-list
+  core/drupal.progress:
+    - mytheme/progress
+  core/drupal.tablesort:
+    - mytheme/drupal.tablesort
+description: 'A custom theme generated from Starterkit'
+core_version_requirement: ^12
+generator: 'starterkit_theme:12.0.0-beta2'
