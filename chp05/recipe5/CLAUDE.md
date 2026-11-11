@@ -3,7 +3,7 @@
 ## Drupal Version
 - Drupal 12.x
 - PHP 8.5+
-- Drush 13
+- Drush 14
 
 ## Architecture
 - Project root: this directory
