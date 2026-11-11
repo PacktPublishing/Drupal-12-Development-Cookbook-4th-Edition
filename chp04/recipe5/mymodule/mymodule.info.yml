@@ -1,0 +1,5 @@
+name: My Module
+type: module
+description: An example module from the Drupal Development Cookbook!
+core_version_requirement: ^12
+package: Custom
