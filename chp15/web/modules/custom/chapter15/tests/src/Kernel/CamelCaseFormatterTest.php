@@ -20,7 +20,7 @@ class CamelCaseFormatterTest extends KernelTestBase {
   use NodeCreationTrait;
   use ContentTypeCreationTrait;
 
-  protected $strictConfigSchema = FALSE;
+  protected bool $strictConfigSchema = FALSE;
 
   protected static $modules = [
     'field',

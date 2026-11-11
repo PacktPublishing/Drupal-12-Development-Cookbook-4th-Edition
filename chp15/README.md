@@ -45,5 +45,12 @@ into your project, install Playwright, and run:
 ddev exec "DRUPAL_BASE_URL=https://your-site.ddev.site npx playwright test"
 ```
 
-All PHPUnit suites and Playwright specs were verified against Drupal 12 (tested
-on the 11.3.x line with PHPUnit 11.5).
+The PHPUnit suites were run against Drupal 12.0.0-beta2 with PHP 8.5 and
+PHPUnit 12.5 (`drupal/core-dev:^12@beta`; unit 5 tests, kernel 1 test,
+functional 3 tests, all passing). Install core with source checkout
+(`composer reinstall drupal/core --prefer-source`) if `web/core/tests` is missing
+from the dist package. The five Playwright specs also passed (Chromium, Node 24,
+Playwright latest) against a fresh Drupal 12.0.0-beta2 standard install. Because
+Standard no longer creates a Basic page type, create a `page` content type, add
+the `field_chapter15_test` string field with the Camel case formatter, and a
+published node titled "Test Page" first (the specs rely on them).

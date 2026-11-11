@@ -17,7 +17,7 @@ test.describe('Content administration listing', () => {
     await page.goto('/admin/content');
     await expect(page.locator('h1')).toContainText('Content');
     // The content table is present.
-    await expect(page.locator('table')).toBeVisible();
+    await expect(page.locator('table.views-table')).toBeVisible();
   });
 
   test('the content type filter narrows the listing', async ({ page }) => {
