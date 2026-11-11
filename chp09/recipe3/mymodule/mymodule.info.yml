@@ -1,0 +1,5 @@
+name: My Module
+type: module
+description: 'A custom module for Form API recipes.'
+core_version_requirement: ^12
+package: Custom
