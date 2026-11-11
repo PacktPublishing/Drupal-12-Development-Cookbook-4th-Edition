@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {}
+name: Portfolio
+type: portfolio
+description: 'Showcase your portfolio projects.'
+help: 'Showcase your portfolio projects.'
+new_revision: true
+preview_mode: 1
+display_submitted: true

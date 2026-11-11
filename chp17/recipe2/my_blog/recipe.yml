@@ -1,0 +1,21 @@
+name: My Blog
+description: 'Sets up a Blog content type with fields, a listing view, and permissions.'
+type: Content type
+install:
+  - node
+  - views
+  - taxonomy
+  - field
+  - text
+  - path
+  - menu_ui
+config:
+  actions:
+    user.role.content_editor:
+      grantPermissions:
+        - 'create blog content'
+        - 'edit own blog content'
+        - 'delete own blog content'
+    user.role.authenticated:
+      grantPermissions:
+        - 'access content'

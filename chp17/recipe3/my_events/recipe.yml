@@ -1,0 +1,17 @@
+name: My Events
+description: 'Sets up an Events content type with date field and listing.'
+type: Content type
+install:
+  - node
+  - datetime
+  - views
+  - field
+  - text
+  - path
+config:
+  actions:
+    user.role.content_editor:
+      grantPermissions:
+        - 'create event content'
+        - 'edit own event content'
+        - 'delete own event content'

@@ -1,0 +1,9 @@
+name: My SEO Basics
+description: 'Installs and configures basic SEO modules.'
+type: SEO
+install:
+  - path
+  - pathauto
+  - metatag
+  - redirect
+  - simple_sitemap

@@ -1,0 +1,15 @@
+name: Company Website
+description: 'A complete company website setup with blog, events, and SEO.'
+type: Site
+recipes:
+  - my_blog
+  - my_events
+  - my_seo
+install:
+  - block
+  - block_content
+config:
+  actions:
+    user.role.content_editor:
+      grantPermissions:
+        - 'access administration pages'

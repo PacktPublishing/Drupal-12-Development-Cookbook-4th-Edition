@@ -1,0 +1,30 @@
+name: My Site Setup
+description: 'Configures basic site settings.'
+type: Site
+input:
+  site_name:
+    data_type: string
+    description: 'The name of your website'
+    default:
+      source: value
+      value: 'My Drupal Site'
+    prompt:
+      method: ask
+      arguments:
+        question: 'What is your site name?'
+  site_mail:
+    data_type: email
+    description: 'The site email address'
+    default:
+      source: config
+      config: ['system.site', 'mail']
+    prompt:
+      method: ask
+      arguments:
+        question: 'What is the site email address?'
+config:
+  actions:
+    system.site:
+      simpleConfigUpdate:
+        name: ${site_name}
+        mail: ${site_mail}
