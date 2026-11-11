@@ -1,0 +1,28 @@
+name: 'My Theme'
+type: theme
+'base theme': false
+version: 1.0.0
+libraries:
+  - mytheme/theme-styling
+  - mytheme/global-styling
+  - mytheme/base
+  - mytheme/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - mytheme/user
+  core/drupal.dropbutton:
+    - mytheme/dropbutton
+  core/drupal.dialog:
+    - mytheme/dialog
+  file/drupal.file:
+    - mytheme/file
+  core/drupal.item-list:
+    - mytheme/item-list
+  core/drupal.progress:
+    - mytheme/progress
+  core/drupal.tablesort:
+    - mytheme/drupal.tablesort
+description: 'A custom theme generated from Starterkit'
+core_version_requirement: ^12
+generator: 'starterkit_theme:12.0.0-beta2'
