@@ -1,0 +1,7 @@
+name: My Custom Module
+type: module
+description: 'Provides custom functionality for the site.'
+core_version_requirement: ^12
+package: Custom
+interface translation project: my_custom_module
+interface translation server pattern: modules/custom/my_custom_module/translations/%language.po

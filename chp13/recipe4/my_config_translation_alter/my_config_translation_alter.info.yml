@@ -1,0 +1,7 @@
+name: My Config Translation Alter
+type: module
+description: 'Swaps in a custom mapper class for a configuration entity type in the Configuration translation UI.'
+core_version_requirement: ^12
+package: Custom
+dependencies:
+  - drupal:config_translation

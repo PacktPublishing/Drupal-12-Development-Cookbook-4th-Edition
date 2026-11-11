@@ -1,0 +1,16 @@
+# Spanish translation for My Custom Module.
+msgid ""
+msgstr ""
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Submit your application"
+msgstr "Enviar tu solicitud"
+
+msgid "Hello, @name!"
+msgstr "Hola, @name!"
+
+msgid "Your request has been processed."
+msgstr "Su solicitud ha sido procesada."
