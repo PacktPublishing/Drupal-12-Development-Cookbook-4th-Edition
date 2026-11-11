@@ -8,6 +8,7 @@ install:
   - image
   - file
   - path
+  - taxonomy
 config:
   actions:
     user.role.content_editor:

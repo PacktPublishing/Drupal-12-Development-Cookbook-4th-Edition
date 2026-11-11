@@ -18,12 +18,20 @@ recipe rather than the `mymodule/` layout used by the other chapters.
 ## Applying a recipe
 
 Copy a recipe folder into your site's `web/recipes/` directory and apply it with
-Drush. The recipe path is resolved relative to Drupal's docroot (the `web`
+Drush 14. The recipe path is resolved relative to Drupal's docroot (the `web`
 directory), which is where `ddev drush` runs:
 
 ```bash
 cp -r recipe2/my_blog /path/to/site/web/recipes/
 ddev drush recipe recipes/my_blog
+ddev drush cr
+```
+
+Core's own CLI is an alternative when Drush is unavailable
+(`recipe` is an alias of `recipe:apply`):
+
+```bash
+ddev exec vendor/bin/dr recipe recipes/my_blog
 ```
 
 `recipe3/company_website` composes the other recipes, so `my_blog`, `my_events`,
@@ -32,9 +40,28 @@ a site that does not already have the sub-recipes' configuration, or clear that
 configuration first — re-applying a recipe whose `config/` objects already exist
 stops with an *exists already and does not match* error.
 
-`recipe3/my_seo` and `recipe4`/`recipe5` install contributed modules
-(`pathauto`, `metatag`, `redirect`, `simple_sitemap`, `admin_toolbar`, and
-`admin_toolbar_search`); run `ddev composer require` for those before applying.
+`recipe4/my_site_setup` takes inputs. Pass them on the command line as
+`--input=my_site_setup.site_name='Acme Co' --input=my_site_setup.site_mail=hi@acme.test`
+(`vendor/bin/dr recipe`) or answer the prompts.
 
-All recipes were verified against Drupal 12 (tested on the 11.3.x line with
-Drush 13).
+## Drupal 12 notes
+
+- Standard no longer ships a Body field, the Toolbar module, or the Article and
+  Basic page recipes. These recipes do not depend on any of them, but blog,
+  event, and portfolio posts have no body text unless you add a Body field.
+- `company_website` no longer installs `admin_toolbar`/`admin_toolbar_search` or
+  grants `access toolbar` (the permission was removed with the Toolbar module;
+  applying it only logs a "Non-existent permission(s)" error).
+- `recipe5/my_portfolio` ships the category and image fields and the form and
+  view displays that the chapter describes (without a Body field).
+- `recipe3/my_seo` (and therefore `company_website`) needs `pathauto`,
+  `metatag`, `redirect`, and `simple_sitemap`. At the time of the Drupal
+  12.0.0-beta2 test none of them had a release that installs on Drupal 12, so
+  these two recipes fail at apply time with *"... is not a known module or
+  theme"* until those releases exist.
+- `config` actions on config entities (for example `views.view.*`) must use
+  `setProperties`; `simpleConfigUpdate` is only for simple configuration such as
+  `system.site`.
+
+All other recipes were applied and verified on Drupal 12.0.0-beta2 (core
+`vendor/bin/dr recipe`; Drush 14 is the book's assumed version).
